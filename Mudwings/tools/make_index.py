@@ -37,8 +37,10 @@ index_file.write("<html>\n")
 index_file.write("<title>Mudwings and the Rightful Bear: Index</title>\n")
 index_file.write("<body>\n")
 #index_file.write("<h1>Mudwings and the Rightful Bear: Index</h1>\n")
-index_file.write("<h1><span style=\"color: brown\">Mudwings</span> and \n")
-index_file.write("    <span style=\"color: darkgreen\">The Rightful Bear</span> : Index</h1>\n")
+index_file.write("<h2><span style=\"color: brown\">Mudwings</span> and \n")
+index_file.write("    <span style=\"color: darkgreen\">The Rightful Bear</span> : Index</h2>\n")
+
+index_file.write("<a href=\"index.html\">Main Contents</a><br><br>")
 
 # Record first character in keyword
 # Enables separating into groups by alphabet
@@ -50,7 +52,7 @@ for key in sorted(issues_per_key):
         
     index_file.write(key+" : \n")
     for n in issues_per_key[key]:
-        index_file.write("  <a href=\"Mudwings-"+n+".html\">"+n+"</a>\n")
+        index_file.write("  <a href=\"issues/Mudwings-"+n+".html\">"+n+"</a>\n")
     index_file.write("  <br>\n")
 
 index_file.write("<br><a href=\"https://TimCootes.github.io\">Tim Cootes</a> 2022\n")

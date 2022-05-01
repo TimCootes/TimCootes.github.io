@@ -15,13 +15,19 @@ def make_issue(i,image_dir,first_i,latest_i):
     f.write("<title>Mudwings and the Rightful Bear: Issue {:0>3d}</title>\n".format(i))
     f.write("<head>\n")
     f.write("  <meta name=\"author\" content=\"Tim Cootes\">\n")
+    
+    # Ensure image is scaled to full width
     f.write("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n")
+    f.write("  <style>\n")
+    f.write("  img { width: 100%; height: auto; }\n")
+    f.write("  </style>\n")
+    
     f.write("</head>\n")
     f.write("<body>\n")
-    f.write("<h1 style=\"text-align:center\">\n")
+    f.write("<h2 style=\"text-align:center\">\n")
     f.write("    <span style=\"color: brown\">Mudwings</span> and \n")
     f.write("    <span style=\"color: darkgreen\">The Rightful Bear</span>\n")
-    f.write("    : Issue {:0>3d}</h1>\n".format(i))
+    f.write("    : Issue {:0>3d}</h2>\n".format(i))
     f.write("<p style=\"text-align:center\">\n")
 
     if (i==first_i):
@@ -43,6 +49,9 @@ def make_issue(i,image_dir,first_i,latest_i):
 
     f.write("<img src=\""+image_dir+"/Mudwings-{:d}.png\"><br>\n".format(i))
     f.write("<br>\n")
+    if (i!=latest_i):
+        f.write(" <a href=\"Mudwings-{:0>3d}.html\">Next</a>\n".format(i+1))
+        
     f.write("</p>\n")
    
     
@@ -53,8 +62,8 @@ def make_issue(i,image_dir,first_i,latest_i):
     
     print("Page written to "+filename)
     
-first_i=70
-last_i=73
+first_i=23
+last_i=299
 for i in range(first_i,last_i+1):
   make_issue(i,"../images",first_i,last_i)
 
