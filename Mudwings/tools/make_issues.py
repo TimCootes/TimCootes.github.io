@@ -43,7 +43,7 @@ def make_issue(i,image_dir,first_i,latest_i):
         f.write(" Next Latest\n".format(i+1))
     else:
         f.write(" <a href=\"Mudwings-{:0>3d}.html\">Next</a>\n".format(i+1))
-        f.write(" <a href=\"Mudwings-{:0>3d}.html\">Latest</a>\n".format(latest_i))
+        f.write(" <a href=\"Mudwings-latest.html\">Latest</a>\n".format(latest_i))
         
     f.write("<br>\n")
 
@@ -63,11 +63,7 @@ def make_issue(i,image_dir,first_i,latest_i):
     print("Page written to "+filename)
     
 first_i=23
-last_i=299
+last_i=320
 for i in range(first_i,last_i+1):
   make_issue(i,"../images",first_i,last_i)
 
-
-# To do:
-# - Add most recent issue option (Mudwings-latest.html) as a copy of last issue
-# - Add target directory
